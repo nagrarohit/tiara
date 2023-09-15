@@ -16,7 +16,7 @@ const Footer = () => {
           <p class="text-sm text-black-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-black-200 sm:py-2 sm:mt-0 mt-4">
             © 2023 Tiara16 —
             <a
-              href="https://twitter.com/knyttneve"
+              href="https://github.com/nagrarohit"
               class="text-black-600 ml-1"
               rel="noopener noreferrer"
               target="_blank"
