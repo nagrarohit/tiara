@@ -5,6 +5,7 @@ import Link from "next/link";
 import { HiShoppingCart } from "react-icons/hi";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";
 import { TfiClose } from "react-icons/tfi";
+import { BsFillBagCheckFill } from "react-icons/bs";
 
 const Navbar = () => {
   const toggleCart = () => {
@@ -18,7 +19,7 @@ const Navbar = () => {
   };
   const ref = useRef();
   return (
-    <div className=" flex  flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl">
+    <div className=" flex flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl">
       <div className="logo mx-5">
         <Link href={"/"}>
           <Image width={200} height={25} src="/textlogo.png" alt=" "></Image>
@@ -59,11 +60,22 @@ const Navbar = () => {
             <div className="item flex my-3">
               <div className="w-2/3 ">Necklace wear the best</div>
               <div className="w-1/3 flex items-center justify-center">
-                <AiOutlinePlusCircle />1<AiOutlineMinusCircle />
+                <AiOutlineMinusCircle className="mx-1 cursor-pointer" />
+                1
+                <AiOutlinePlusCircle className="mx-1 cursor-pointer" />
               </div>
             </div>
           </li>
         </ol>
+        <div className="flex">
+          <button className="flex  text-white bg-slate-400 border-0 py-2 px-2 mr-2 focus:outline-none hover:bg-slate-600 rounded text-sm">
+            <BsFillBagCheckFill className="m-1" />
+            checkout
+          </button>
+          <button className="flex  text-white bg-slate-400 border-0 py-2 px-2 mr-2 focus:outline-none hover:bg-slate-600 rounded text-sm">
+            clearCart
+          </button>
+        </div>
       </div>
     </div>
   );
