@@ -6,7 +6,7 @@ import { BsFillBagCheckFill } from "react-icons/bs";
 const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
   console.log({ subtotal });
   return (
-    <div className="container m-auto">
+    <div className="container px-5 py-24 mx-auto">
       <h1 className="font-bold text-center my-8 text-xl">checkout</h1>
       <h2 className="font-bold mx-6 my-4 text-xl">Delivery Details</h2>
       <div className="mx-auto flex">

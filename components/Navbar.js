@@ -6,6 +6,7 @@ import { HiShoppingCart } from "react-icons/hi";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";
 import { TfiClose } from "react-icons/tfi";
 import { BsFillBagCheckFill } from "react-icons/bs";
+import { VscAccount } from "react-icons/vsc";
 
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
   const toggleCart = () => {
@@ -38,11 +39,14 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
           </Link>
         </ul>
       </div>
-      <div
-        onClick={toggleCart}
-        className=" cursor-pointer cart absolute right-0 top-9 mx-5 "
-      >
-        <HiShoppingCart className="text-xl md:text-4xl "></HiShoppingCart>
+      <div className=" cursor-pointer cart absolute right-0 top-9 mx-5 flex ">
+        <Link href={"/login"}>
+          <VscAccount className="text-xl md:text-4xl mx-2"></VscAccount>
+        </Link>
+        <HiShoppingCart
+          onClick={toggleCart}
+          className="text-xl md:text-4xl "
+        ></HiShoppingCart>
       </div>
       <div
         ref={ref}
