@@ -23,6 +23,9 @@ const handler = async (req, res) => {
       if (item.availableQty > 0) {
         rings[item.title].color = [item.color];
         rings[item.title].size = [item.size];
+      } else {
+        rings[item.title].color = [];
+        rings[item.title].size = [];
       }
     }
   }
