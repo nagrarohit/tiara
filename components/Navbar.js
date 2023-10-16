@@ -29,13 +29,13 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
       <div className="nav">
         <ul className="flex  items-center space-x-4 font-bold md:text-xl ">
           <Link href={"/necklace"}>
-            <li>Necklace</li>
+            <li className="hover:text-gray-500">Necklace</li>
           </Link>
           <Link href={"/rings"}>
-            <li>Rings</li>
+            <li className="hover:text-gray-500">Rings</li>
           </Link>
           <Link href={"/bangles"}>
-            <li>Bangles</li>
+            <li className="hover:text-gray-500">Bangles</li>
           </Link>
         </ul>
       </div>
@@ -68,7 +68,10 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
             Object.keys(cart).map((k) => (
               <li key={k}>
                 <div className="item flex my-3">
-                  <div className="w-2/3">{cart[k].name}</div>
+                  <div className="w-2/3">
+                    {cart[k].name}
+                    {/* ({cart[k].size}/{cart[k].variant}) */}
+                  </div>
                   <div className="w-1/3 flex items-center justify-center">
                     <AiOutlineMinusCircle
                       onClick={() => {
