@@ -21,8 +21,10 @@ const post = ({ addToCart, product, variants }) => {
     setPin(e.target.value);
   };
 
-  const refreshVariants = (newcolor, newsize) => {
-    let url = `http:/localhost:3000/product/${variants[newcolor][newsize]["slug"]}`;
+  const refreshVariants = (newsize, newcolor) => {
+    console.log("newsize and newcolor are:  ", newsize, newcolor);
+    let url = `http://localhost:3000/product/${variants[newcolor][newsize]["slug"]}`;
+    console.log("url:", url);
     window.location = url;
   };
   const [color, setColor] = useState(product.color);
@@ -147,7 +149,6 @@ const post = ({ addToCart, product, variants }) => {
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>
-                  console.log(variants)
                   {Object.keys(variants).includes("transparent") &&
                     Object.keys(variants["transparent"]).includes(size) && (
                       <button
@@ -156,7 +157,7 @@ const post = ({ addToCart, product, variants }) => {
                         }}
                         className={`border-2 rounded-full w-6 h-6 focus:outline-none ${
                           color === "transparent"
-                            ? "border-black"
+                            ? "border-black "
                             : "border-gray-300"
                         }`}
                       ></button>
@@ -169,8 +170,8 @@ const post = ({ addToCart, product, variants }) => {
                         }}
                         className={`border-2 border-gray-300 ml-1 bg-stone-200-700 rounded-full w-6 h-6 focus:outline-none ${
                           color === "silver"
-                            ? "border-black"
-                            : "border-gray-300"
+                            ? "border-black bg-stone-200"
+                            : "border-gray-300 bg-stone-200"
                         }`}
                       ></button>
                     )}
@@ -182,8 +183,8 @@ const post = ({ addToCart, product, variants }) => {
                         }}
                         className={`border-2 border-gray-300 ml-1 bg-orange-300-500 rounded-full w-6 h-6 focus:outline-none ${
                           color === "golden"
-                            ? "border-black"
-                            : "border-gray-300"
+                            ? "border-black bg-orange-300"
+                            : "border-gray-300 bg-orange-300"
                         }`}
                       ></button>
                     )}
@@ -198,15 +199,18 @@ const post = ({ addToCart, product, variants }) => {
                       }}
                       className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500 text-base pl-3 pr-10"
                     >
-                      {Object.keys(variants[color]).includes("S") && (
-                        <option value={"S"}>S</option>
-                      )}
-                      {Object.keys(variants[color]).includes("M") && (
-                        <option value={"M"}>M</option>
-                      )}
-                      {Object.keys(variants[color]).includes("L") && (
-                        <option value={"L"}>L</option>
-                      )}
+                      {variants[color] &&
+                        Object.keys(variants[color]).includes("S") && (
+                          <option value={"S"}>S</option>
+                        )}
+                      {variants[color] &&
+                        Object.keys(variants[color]).includes("M") && (
+                          <option value={"M"}>M</option>
+                        )}
+                      {variants[color] &&
+                        Object.keys(variants[color]).includes("L") && (
+                          <option value={"L"}>L</option>
+                        )}
                     </select>
                     <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                       <svg
@@ -296,7 +300,7 @@ export async function getServerSideProps(context) {
   if (!mongoose.connections[0].readyState) {
     await mongoose.connect(process.env.MONGO_URI);
   }
-  let product = await Product.find({ slug: context.query.slug });
+  let product = await Product.findOne({ slug: context.query.slug });
   if (!product) {
     console.error("Product not found for the given slug:", context.query.slug);
     return {
