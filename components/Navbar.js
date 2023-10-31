@@ -29,13 +29,13 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
       <div className="nav">
         <ul className="flex  items-center space-x-4 font-bold md:text-xl ">
           <Link href={"/necklace"}>
-            <li className="hover:text-gray-500">Necklace</li>
+            <li className="hover:text-cyan-700">Necklace</li>
           </Link>
           <Link href={"/rings"}>
-            <li className="hover:text-gray-500">Rings</li>
+            <li className="hover:text-cyan-700">Rings</li>
           </Link>
           <Link href={"/bangles"}>
-            <li className="hover:text-gray-500">Bangles</li>
+            <li className="hover:text-cyan-700">Bangles</li>
           </Link>
         </ul>
       </div>
@@ -50,7 +50,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
       </div>
       <div
         ref={ref}
-        className=" w-72 h-[100vh] sideCart absolute top-0 right-0 px-8 py-10 bg-purple-200  transform transition-transform translate-x-full"
+        className=" w-72 h-[100vh] overflow-y-scroll sideCart absolute top-0 right-0 px-8 py-10 bg-purple-200  transform transition-transform translate-x-full"
       >
         <h1 className="font-bold text-xl">Shopping cart</h1>
         <span
@@ -69,8 +69,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
               <li key={k}>
                 <div className="item flex my-3">
                   <div className="w-2/3">
-                    {cart[k].name}
-                    {/* ({cart[k].size}/{cart[k].variant}) */}
+                    {cart[k].name}({cart[k].size}/{cart[k].variant})
                   </div>
                   <div className="w-1/3 flex items-center justify-center">
                     <AiOutlineMinusCircle

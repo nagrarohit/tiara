@@ -121,7 +121,9 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
             Object.keys(cart).map((k) => (
               <li key={k}>
                 <div className="item flex my-3">
-                  <div className="w-2/3">{cart[k].name}</div>
+                  <div className="w-2/3">
+                    {cart[k].name}({cart[k].size}/{cart[k].variant})
+                  </div>
                   <div className="w-1/3 flex items-center justify-center">
                     <AiOutlineMinusCircle
                       onClick={() => {
