@@ -225,6 +225,32 @@ const post = ({ buyNow, addToCart, product, variants }) => {
                         }`}
                       ></button>
                     )}
+                  {Object.keys(variants).includes("gold") &&
+                    Object.keys(variants["gold"]).includes(size) && (
+                      <button
+                        onClick={() => {
+                          refreshVariants(size, "gold");
+                        }}
+                        className={`border-2 rounded-full w-6 h-6 focus:outline-none ${
+                          color === "gold"
+                            ? "border-black bg-yellow-200"
+                            : "border-gray-300  bg-yellow-200"
+                        }`}
+                      ></button>
+                    )}
+                  {Object.keys(variants).includes("Black") &&
+                    Object.keys(variants["Black"]).includes(size) && (
+                      <button
+                        onClick={() => {
+                          refreshVariants(size, "Black");
+                        }}
+                        className={`border-2 rounded-full w-6 h-6 focus:outline-none ${
+                          color === "Black"
+                            ? "border-black bg-black"
+                            : "border-gray-300 bg-black"
+                        }`}
+                      ></button>
+                    )}
                 </div>
                 <div className="flex ml-6 items-center">
                   <span className="mr-3">Size</span>
@@ -356,7 +382,10 @@ export async function getServerSideProps(context) {
       notFound: true, // Return a 404 page or handle the error accordingly
     };
   }
-  let variants = await Product.find({ title: product.title });
+  let variants = await Product.find({
+    title: product.title,
+    category: product.category,
+  });
   let colorSizeSlug = {};
   for (let item of variants) {
     if (Object.keys(colorSizeSlug).includes(item.color)) {

@@ -1,200 +1,81 @@
 import React from "react";
-import { useRouter } from "next/router";
+import Product from "@/models/Product";
+import mongoose from "mongoose";
+import Link from "next/link";
 
-const Bangles = () => {
-  const router = useRouter();
-  const handleLinkClick = () => {
-    router.push("/product/wear-the-necklace");
-  };
+const bangle = ({ products }) => {
   return (
     <div>
-      <section className="text-gray-600 body-font ">
+      <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4">
-            <div
-              onClick={handleLinkClick}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full "
-            >
-              <a className="block relative  rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block "
-                  src="/bangles/inarm.webp  "
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  Necklace
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The Catalyzer
-                </h2>
-                <p className="mt-1">$16.00</p>
-                <p className="mt-1">S,M,L</p>
-              </div>
-            </div>
-            <div
-              onClick={handleLinkClick}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full "
-            >
-              <a className="block relative  rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="/bangles/inarm.webp"
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  Necklace
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Shooting Stars
-                </h2>
-                <p className="mt-1">$21.15</p>
-                <p className="mt-1">S,M,L</p>
-              </div>
-            </div>
-            <div
-              onClick={handleLinkClick}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full "
-            >
-              <a className="block relative  rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="/bangles/inarm.webp"
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  Necklace
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Neptune
-                </h2>
-                <p className="mt-1">$12.00</p>
-                <p className="mt-1">S,M,L</p>
-              </div>
-            </div>
-            <div
-              onClick={handleLinkClick}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full "
-            >
-              <a className="block relative  rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="/bangles/inarm.webp"
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  Necklace
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The 400 Blows
-                </h2>
-                <p className="mt-1">$18.40</p>
-                <p className="mt-1">S,M,L</p>
-              </div>
-            </div>
-            <div
-              onClick={handleLinkClick}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full "
-            >
-              <a className="block relative  rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="/bangles/inarm.webp"
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  Necklace
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The Catalyzer
-                </h2>
-                <p className="mt-1">$16.00</p>
-                <p className="mt-1">S,M,L</p>
-              </div>
-            </div>
-            <div
-              onClick={handleLinkClick}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full "
-            >
-              <a className="block relative  rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="/bangles/inarm.webp"
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  Necklace
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Shooting Stars
-                </h2>
-                <p className="mt-1">$21.15</p>
-                <p className="mt-1">S,M,L</p>
-              </div>
-            </div>
-            <div
-              onClick={handleLinkClick}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full "
-            >
-              <a className="block relative  rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="/bangles/inarm.webp"
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  Necklace
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Neptune
-                </h2>
-                <p className="mt-1">$12.00</p>
-                <p className="mt-1">S,M,L</p>
-              </div>
-            </div>
-            <div
-              onClick={handleLinkClick}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full "
-            >
-              <a className="block relative  rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="/bangles/inarm.webp"
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  Necklace
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The 400 Blows
-                </h2>
-                <p className="mt-1">$18.40</p>
-                <p className="mt-1">S,M,L</p>
-              </div>
-            </div>
+          <div className="flex flex-wrap -m-4 justify-center">
+            {Object.keys(products).length === 0 && (
+              <p>
+                Sorry The bangles are Out of Stock. Stay Tuned They are on the
+                way!
+              </p>
+            )}
+            {Object.keys(products).map((item) => {
+              return (
+                <div
+                  key={products[item]._id}
+                  className="lg:w-1/4 md:w-1/2 p-4 w-full cursor-pointer"
+                >
+                  <Link href={`/product/${products[item].slug}`} passHref>
+                    <div className="block relative rounded overflow-hidden">
+                      <img
+                        alt="ecommerce"
+                        className="object-cover object-center w-full h-full block"
+                        src={products[item].img}
+                      />
+                    </div>
+                  </Link>
+                  <div className="mt-4 text-center">
+                    <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                      bangle
+                    </h3>
+                    <h2 className="text-gray-900 title-font text-lg font-medium">
+                      {products[item].title}
+                    </h2>
+                    <p className="mt-1">${products[item].price}</p>
+                    <div className="mt-1">
+                      {products[item].size.includes("S") && (
+                        <span className="border-gray-400 border rounded-md px-1 mx-1">
+                          S
+                        </span>
+                      )}
+                      {products[item].size.includes("M") && (
+                        <span className="border-gray-400 border rounded-md px-1 mx-1">
+                          M
+                        </span>
+                      )}
+                      {products[item].size.includes("L") && (
+                        <span className="border-gray-400 border rounded-md px-1 mx-1">
+                          L
+                        </span>
+                      )}
+                    </div>
+                    <div className="mt-1">
+                      {products[item].color.includes("transparent") && (
+                        <button className="border-2 border-gray-400 px-1 mx-1 bg-transparent rounded-full w-6 h-6 focus:outline-none"></button>
+                      )}
+                      {products[item].color.includes("gold") && (
+                        <button className="border-2 border-gray-400 px-1 mx-1 bg-yellow-200 rounded-full w-6 h-6 focus:outline-none"></button>
+                      )}
+                      {products[item].color.includes("silver") && (
+                        <button className="border-2 border-gray-400 px-1 mx-1 bg-stone-200 rounded-full w-6 h-6 focus:outline-none"></button>
+                      )}
+                      {products[item].color.includes("golden") && (
+                        <button className="border-2 border-gray-400 px-1 mx-1 bg-orange-300 rounded-full w-6 h-6 focus:outline-none"></button>
+                      )}
+                      {products[item].color.includes("Black") && (
+                        <button className="border-2 border-gray-400 px-1 mx-1 bg-black rounded-full w-6 h-6 focus:outline-none"></button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -202,4 +83,39 @@ const Bangles = () => {
   );
 };
 
-export default Bangles;
+export async function getServerSideProps(context) {
+  if (!mongoose.connections[0].readyState) {
+    await mongoose.connect(process.env.MONGO_URI);
+  }
+  let products = await Product.find({ category: "bangle" });
+  let bangle = {};
+  for (let item of products) {
+    if (item.title in bangle) {
+      if (
+        !bangle[item.title].color.includes(item.color) &&
+        item.availableQty > 0
+      ) {
+        bangle[item.title].color.push(item.color);
+      }
+      if (
+        !bangle[item.title].size.includes(item.size) &&
+        item.availableQty > 0
+      ) {
+        bangle[item.title].size.push(item.size);
+      }
+    } else {
+      bangle[item.title] = JSON.parse(JSON.stringify(item));
+      if (item.availableQty > 0) {
+        bangle[item.title].color = [item.color];
+        bangle[item.title].size = [item.size];
+      } else {
+        bangle[item.title].color = [];
+        bangle[item.title].size = [];
+      }
+    }
+  }
+  return {
+    props: { products: JSON.parse(JSON.stringify(bangle)) },
+  };
+}
+export default bangle;
