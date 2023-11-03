@@ -13,7 +13,7 @@ const Login = () => {
         <form className="space-y-6" action="#" method="POST">
           <div>
             <label
-              for="email"
+              htmlFor="email"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
               Email address
@@ -33,7 +33,7 @@ const Login = () => {
           <div>
             <div className="flex items-center justify-between">
               <label
-                for="password"
+                htmlFor="password"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Password
