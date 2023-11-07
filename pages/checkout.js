@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";
-import Link from "next/link";
+import Link from "next/Link";
 import { BsFillBagCheckFill } from "react-icons/bs";
 
 const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
