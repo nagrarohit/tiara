@@ -111,10 +111,10 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
       <h2 className="font-bold mx-6 my-4 text-xl">
         Review Cart items & Proceed to payment
       </h2>
-      <div className=" sideCart px-8 py-10 bg-slate-200 m-3 ">
+      <div className=" sideCart px-8 py-10 bg-gradient-to-br to-black via-cyan-900 from-white text-black  m-3 rounded-lg">
         <ol className="font-semibold list-decimal">
           {Object.keys(cart).length === 0 ? (
-            <div className="my-4 font-semibold">
+            <div className="my-4 font-semibold ">
               There are no items in the cart
             </div>
           ) : (
@@ -162,7 +162,7 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
       </div>
       <div className="mx-3">
         <Link href={"/checkout"}>
-          <button className="flex  text-white bg-slate-400 border-0 py-2 px-2 mr-2 focus:outline-none hover:bg-slate-600 rounded text-sm">
+          <button className="flex bg-gradient-to-t from-black via-gray-700 to-black text-white border-0 py-2 px-2 mr-2 focus:outline-none hover:bg-slate-600 rounded text-sm">
             <BsFillBagCheckFill className="m-1" />
             Pay ${subtotal}
           </button>

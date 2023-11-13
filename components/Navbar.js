@@ -86,7 +86,7 @@ const Navbar = ({
         </a>
         {!user.value && (
           <Link href="/login">
-            <button className="bg-gradient-to-tr from-black via-gray-400 to-black text-white mx-2 px-4 py-2 rounded sm:px-2 sm:py-1">
+            <button className="bg-gradient-to-t from-black via-gray-700 to-black text-white mx-2 px-4 py-2 rounded sm:px-2 sm:py-1">
               Login
             </button>
           </Link>
@@ -160,7 +160,7 @@ const Navbar = ({
         </ol>
         <div className="total font-bold my-2">
           <p className="text-gradient bg-gradient-to-r to-black from-white text-transparent bg-clip-text">
-            subtotal: {subtotal}
+            subtotal: ${subtotal}
           </p>
         </div>
 
