@@ -50,7 +50,7 @@ const Navbar = ({
         </ul>
       </div>
       <div className=" cursor-pointer items-center cart absolute right-0 top-9 mx-5 flex ">
-        <a
+        <span
           onMouseOver={() => {
             setDropdown(true);
           }}
@@ -83,7 +83,7 @@ const Navbar = ({
           {user.value && (
             <VscAccount className="text-xl md:text-4xl mx-2"></VscAccount>
           )}
-        </a>
+        </span>
         {!user.value && (
           <Link href="/login">
             <button className="bg-gradient-to-t from-black via-gray-700 to-black text-white mx-2 px-4 py-2 rounded sm:px-2 sm:py-1">
