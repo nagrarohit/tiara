@@ -4,6 +4,8 @@ import Link from "next/Link";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import Head from "next/head";
 import Script from "next/script";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
   const [name, setName] = useState("");
@@ -12,12 +14,12 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
   const [address, setAddress] = useState("");
   const [pincode, setPincode] = useState("");
 
-  /** Pending Work;-state and city must be populated automatically after the user enters a reachable && valid pincode */
+  /** Pending Work;-state and city must be populated automatically after the user enters a reachable && valid pincode --DONE */
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
   const [disabled, setDisabled] = useState(true);
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     if (e.target.name == "name") {
       setName(e.target.value);
     } else if (e.target.name == "email") {
@@ -28,6 +30,20 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
       setAddress(e.target.value);
     } else if (e.target.name == "pincode") {
       setPincode(e.target.value);
+      if (e.target.value.length == 6) {
+        let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
+        let pinJson = await pins.json();
+        if (Object.keys(pinJson).includes(e.target.value)) {
+          setCity(pinJson[e.target.value][0]);
+          setState(pinJson[e.target.value][1]);
+        } else {
+          setState("");
+          setCity("");
+        }
+      } else {
+        setState("");
+        setCity("");
+      }
     }
     setTimeout(() => {
       if (
@@ -64,39 +80,64 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
       body: JSON.stringify(data),
     });
 
-    let txtRes = await a.json();
-    console.log(txtRes);
-    let txnToken = txtRes.txnToken;
-    var config = {
-      root: "",
-      flow: "DEFAULT",
-      data: {
-        orderId: oid,
-        token: txnToken /* update token value */,
-        tokenType: "TXN_TOKEN",
-        amount: subtotal /* update amount */,
-      },
-      handler: {
-        notifyMerchant: function (eventName, data) {
-          console.log("notifyMerchant handler function called");
-          console.log("eventName => ", eventName);
-          console.log("data => ", data);
+    let txnRes = await a.json();
+    if (txnRes.success) {
+      let txnToken = txnRes.txnToken;
+      var config = {
+        root: "",
+        flow: "DEFAULT",
+        data: {
+          orderId: oid,
+          token: txnToken /* update token value */,
+          tokenType: "TXN_TOKEN",
+          amount: subtotal /* update amount */,
         },
-      },
-    };
+        handler: {
+          notifyMerchant: function (eventName, data) {
+            console.log("notifyMerchant handler function called");
+            console.log("eventName => ", eventName);
+            console.log("data => ", data);
+          },
+        },
+      };
 
-    window.Paytm.CheckoutJS.init(config)
-      .then(function onSuccess() {
-        // after successfully updating configuration, invoke JS Checkout
-        window.Paytm.CheckoutJS.invoke();
-      })
-      .catch(function onError(error) {
-        console.log("error => ", error);
+      window.Paytm.CheckoutJS.init(config)
+        .then(function onSuccess() {
+          // after successfully updating configuration, invoke JS Checkout
+          window.Paytm.CheckoutJS.invoke();
+        })
+        .catch(function onError(error) {
+          console.log("error => ", error);
+        });
+    } else {
+      console.log(txnRes.error);
+      toast.error(txnRes.error, {
+        position: "top-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
       });
+    }
   };
 
   return (
     <div className="container px-5 py-24 mx-auto">
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <Head>
         <meta
           name="viewport"
@@ -199,8 +240,8 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
               State
             </label>
             <input
+              onChange={handleChange}
               value={state}
-              readOnly={true}
               type="text"
               id="state"
               name="state"
@@ -215,7 +256,7 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
             </label>
             <input
               value={city}
-              readOnly={true}
+              onChange={handleChange}
               type="text"
               id="city"
               name="city"
