@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Image from "next/image";
-import Link from "next/Link";
+import Link from "next/link";
 
 import { HiShoppingCart } from "react-icons/hi";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";

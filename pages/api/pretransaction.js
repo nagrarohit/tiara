@@ -6,7 +6,7 @@ import connectDb from "@/middleware/mongoose";
 const PaytmChecksum = require("paytmchecksum");
 const handler = async (req, res) => {
   if (req.method == "POST") {
-    //Check if the cart is tampered with (--pending)
+    //Check if the cart is tampered with (--DONE)
     let product,
       cart = req.body.cart,
       sumTotal = 0;
@@ -14,6 +14,14 @@ const handler = async (req, res) => {
       console.log(item);
       sumTotal += cart[item].price * cart[item].qty;
       product = await Product.findOne({ slug: item });
+      // check if the cart items are out of stock (--DONE)
+      if (product.availableQty < cart[item].qty) {
+        res.status(200).json({
+          success: false,
+          error: "Some Items in your cart are out of stock",
+        });
+      }
+
       if (product.price != cart[item].price) {
         res.status(200).json({
           success: false,
@@ -28,8 +36,6 @@ const handler = async (req, res) => {
         .json({ success: false, error: "Price Mismatch. Please try again !" });
       return;
     }
-
-    // check if the cart items are out of stock (--pending)
 
     // check if the user details are valid  (--pending)
 

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";
-import Link from "next/Link";
+import Link from "next/link";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import Head from "next/head";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
+const Checkout = ({ cart, clearCart, subtotal, addToCart, removeFromCart }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -18,6 +18,16 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
   const [disabled, setDisabled] = useState(true);
+  const [user, setUser] = useState({ value: null });
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("myuser"));
+
+    if (user.token) {
+      setUser(user);
+      setEmail(user.email);
+    }
+  }, []);
 
   const handleChange = async (e) => {
     if (e.target.name == "name") {
@@ -111,6 +121,8 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
         });
     } else {
       console.log(txnRes.error);
+      clearCart();
+
       toast.error(txnRes.error, {
         position: "top-left",
         autoClose: 2000,
@@ -173,14 +185,25 @@ const Checkout = ({ cart, subtotal, addToCart, removeFromCart }) => {
             <label htmlFor="email" className="leading-7 text-sm text-gray-600">
               Email
             </label>
-            <input
-              onChange={handleChange}
-              value={email}
-              type="email"
-              id="email"
-              name="email"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
+            {user && user.value ? (
+              <input
+                value={user.email}
+                readOnly
+                type="email"
+                id="email"
+                name="email"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            ) : (
+              <input
+                onChange={handleChange}
+                value={email}
+                type="email"
+                id="email"
+                name="email"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            )}
           </div>
         </div>
       </div>
