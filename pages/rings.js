@@ -1,7 +1,7 @@
 import React from "react";
 import Product from "@/models/Product";
 import mongoose from "mongoose";
-import Link from "next/Link";
+import Link from "next/link";
 
 const Rings = ({ products }) => {
   return (

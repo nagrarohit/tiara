@@ -4,9 +4,9 @@ import React, { useEffect } from "react";
 import mongoose from "mongoose";
 
 const MyOrder = ({ order, clearCart }) => {
+  const router = useRouter();
   const products = order.products;
   useEffect(() => {
-    const router = useRouter();
     if (router.query.clearCart == 1) {
       clearCart();
     }

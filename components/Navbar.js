@@ -166,14 +166,18 @@ const Navbar = ({
 
         <div className="flex">
           <Link href={"/checkout"}>
-            <button className="flex  bg-gradient-to-t from-black via-transparent to-black text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm">
+            <button
+              disabled={Object.keys(cart).length === 0}
+              className="flex  disabled:bg-gray-300 bg-gradient-to-t from-black via-transparent to-black text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
+            >
               <BsFillBagCheckFill className="m-1" />
               checkout
             </button>
           </Link>
           <button
             onClick={clearCart}
-            className="flex bg-gradient-to-t from-black via-gray-700 to-black text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
+            disabled={Object.keys(cart).length === 0}
+            className="disabled:bg-gray-300 flex bg-gradient-to-t from-black via-transparent to-black text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
           >
             clearCart
           </button>

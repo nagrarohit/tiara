@@ -10,8 +10,14 @@ const handler = async (req, res) => {
     let product,
       cart = req.body.cart,
       sumTotal = 0;
+    if (req.body.subtotal <= 0) {
+      res.status(200).json({
+        success: false,
+        error: "Your cart is empty! Please add some products.",
+      });
+      return;
+    }
     for (let item in cart) {
-      console.log(item);
       sumTotal += cart[item].price * cart[item].qty;
       product = await Product.findOne({ slug: item });
       // check if the cart items are out of stock (--DONE)
@@ -20,6 +26,7 @@ const handler = async (req, res) => {
           success: false,
           error: "Some Items in your cart are out of stock",
         });
+        return;
       }
 
       if (product.price != cart[item].price) {
@@ -37,7 +44,20 @@ const handler = async (req, res) => {
       return;
     }
 
-    // check if the user details are valid  (--pending)
+    // check if the user details are valid  (--Done)
+
+    if (req.body.phone.length < 10 || !Number.isInteger(req.body.phone)) {
+      res
+        .status(200)
+        .json({ success: false, error: "Please enter 10 digit Phone No.  !" });
+      return;
+    }
+    if (req.body.pincode.length !== 6 || !Number.isInteger(req.body.pincode)) {
+      res
+        .status(200)
+        .json({ success: false, error: "Please enter 6 digit Pincode !" });
+      return;
+    }
 
     //Initiate an order corresponding to this order id
     let order = new Order({
