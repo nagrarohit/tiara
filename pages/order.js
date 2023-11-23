@@ -2,10 +2,12 @@ import { useRouter } from "next/router";
 import Order from "@/models/Order";
 import React, { useEffect } from "react";
 import mongoose from "mongoose";
+import { FcShipped } from "react-icons/fc";
 
 const MyOrder = ({ order, clearCart }) => {
   const router = useRouter();
   const products = order.products;
+  console.log(order);
   useEffect(() => {
     if (router.query.clearCart == 1) {
       clearCart();
@@ -27,20 +29,36 @@ const MyOrder = ({ order, clearCart }) => {
             <p className="leading-relaxed mb-4">
               Your order has been successfully placed. Thanks for shopping with
               us.
-              <p>Your payment Status is {order.status}</p>
             </p>
-            <div className="flex border-t border-gray-200 py-2">
-              <span className="text-gray-500">Color</span>
-              <span className="ml-auto text-gray-900">{order.variant}</span>
-            </div>
-            <div className="flex border-t border-gray-200 py-2">
-              <span className="text-gray-500">Size</span>
-              <span className="ml-auto text-gray-900">{order.size}</span>
-            </div>
-            <div className="flex border-t border-b mb-6 border-gray-200 py-2">
-              <span className="text-gray-500">Quantity</span>
-              <span className="ml-auto text-gray-900">{order.qty}</span>
-            </div>
+            <p>Your payment Status is {order.status}</p>
+            {Object.keys(products).map((key) => (
+              <div key={key}>
+                <div className="flex mt-4 border-t border-gray-200 py-2">
+                  <span className="text-gray-500">Color</span>
+                  <span className="ml-auto italic text-gray-900">
+                    {products[key].variant}
+                  </span>
+                </div>
+                <div className="flex border-t border-gray-200 py-2">
+                  <span className="text-gray-500">Size</span>
+                  <span className="ml-auto italic text-gray-900">
+                    {products[key].size}
+                  </span>
+                </div>
+                <div className="flex border-t border-gray-200 py-2">
+                  <span className="text-gray-500">Per Item Price</span>
+                  <span className="ml-auto italic text-gray-900">
+                    {products[key].price}
+                  </span>
+                </div>
+                <div className="flex border-t border-b mb-6 border-gray-200 py-2">
+                  <span className="text-gray-500 ">Quantity</span>
+                  <span className="ml-auto italic text-gray-900">
+                    {products[key].qty}
+                  </span>
+                </div>
+              </div>
+            ))}
             <div className="flex">
               <span className="title-font font-medium text-2xl text-gray-900">
                 Subtotal: ${order.amount}
@@ -50,11 +68,7 @@ const MyOrder = ({ order, clearCart }) => {
               </button>
             </div>
           </div>
-          <img
-            alt="ecommerce"
-            className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-            src="https://dummyimage.com/400x400"
-          />
+          <FcShipped className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" />
         </div>
       </div>
     </section>

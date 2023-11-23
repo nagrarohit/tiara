@@ -66,7 +66,7 @@ const Orders = () => {
                       <td className="px-6 py-4">{item.email}</td>
                       <td className="px-6 py-4">{item.amount}</td>
                       <td className="px-6 py-4">
-                        <Link href={`/order?id=` + item._id}>
+                        <Link legacyBehavior href={`/order?id=` + item._id}>
                           <a>Details</a>
                         </Link>
                       </td>
