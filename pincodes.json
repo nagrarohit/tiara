@@ -1,0 +1,450 @@
+{
+    "133201": [
+        "Subhri",
+        "haryana"
+    ],
+    "133205": [
+        "barara",
+        " haryana"
+    ],
+    "133001": [
+        "ambala",
+        "haryana"
+    ],
+    "133002": [
+        "yamunanagar",
+        "haryana"
+    ],
+    "110001": [
+        "Connaught Place",
+        "Delhi"
+    ],
+    "110020": [
+        "South Extension",
+        "Delhi"
+    ],
+    "110030": [
+        "Hauz Khas",
+        "Delhi"
+    ],
+    "110040": [
+        "Preet Vihar",
+        "Delhi"
+    ],
+    "110050": [
+        "Karol Bagh",
+        "Delhi"
+    ],
+    "110060": [
+        "Rohini",
+        "Delhi"
+    ],
+    "110070": [
+        "Mayur Vihar",
+        "Delhi"
+    ],
+    "110080": [
+        "Dwarka",
+        "Delhi"
+    ],
+    "110090": [
+        "Lajpat Nagar",
+        "Delhi"
+    ],
+    "110100": [
+        "Vasant Kunj",
+        "Delhi"
+    ],
+    "110110": [
+        "Shahdara",
+        "Delhi"
+    ],
+    "110120": [
+        "Saket",
+        "Delhi"
+    ],
+    "400001": [
+        "Fort",
+        "Mumbai"
+    ],
+    "400601": [
+        "Thane",
+        "Mumbai"
+    ],
+    "411001": [
+        "Pune City",
+        "Pune"
+    ],
+    "400701": [
+        "Vashi",
+        "Navi Mumbai"
+    ],
+    "400051": [
+        "Bandra",
+        "Mumbai"
+    ],
+    "411027": [
+        "Kothrud",
+        "Pune"
+    ],
+    "421301": [
+        "Kalyan",
+        "Thane"
+    ],
+    "411057": [
+        "Wakad",
+        "Pune"
+    ],
+    "400614": [
+        "CBD Belapur",
+        "Navi Mumbai"
+    ],
+    "400706": [
+        "Kharghar",
+        "Navi Mumbai"
+    ],
+    "400703": [
+        "Nerul",
+        "Navi Mumbai"
+    ],
+    "400607": [
+        "Airoli",
+        "Navi Mumbai"
+    ],
+    "700001": [
+        "Dalhousie Square",
+        "Kolkata"
+    ],
+    "700064": [
+        "Salt Lake City",
+        "Kolkata"
+    ],
+    "721101": [
+        "Medinipur",
+        "Paschim Medinipur"
+    ],
+    "700030": [
+        "Ballygunge",
+        "Kolkata"
+    ],
+    "700068": [
+        "Garia",
+        "Kolkata"
+    ],
+    "700073": [
+        "Behala",
+        "Kolkata"
+    ],
+    "700027": [
+        "Dum Dum",
+        "Kolkata"
+    ],
+    "700091": [
+        "New Town",
+        "Kolkata"
+    ],
+    "700059": [
+        "Tollygunge",
+        "Kolkata"
+    ],
+    "700035": [
+        "Park Street",
+        "Kolkata"
+    ],
+    "700053": [
+        "Lake Town",
+        "Kolkata"
+    ],
+    "700110": [
+        "Rajarhat",
+        "Kolkata"
+    ],
+    "600001": [
+        "Parry's Corner",
+        "Chennai"
+    ],
+    "641001": [
+        "Gandhipuram",
+        "Coimbatore"
+    ],
+    "620001": [
+        "Sangam Vihar",
+        "Madurai"
+    ],
+    "600018": [
+        "Anna Nagar",
+        "Chennai"
+    ],
+    "600025": [
+        "Adyar",
+        "Chennai"
+    ],
+    "641018": [
+        "Peelamedu",
+        "Coimbatore"
+    ],
+    "600032": [
+        "Velachery",
+        "Chennai"
+    ],
+    "641024": [
+        "RS Puram",
+        "Coimbatore"
+    ],
+    "600045": [
+        "T Nagar",
+        "Chennai"
+    ],
+    "600102": [
+        "Mylapore",
+        "Chennai"
+    ],
+    "600077": [
+        "Royapettah",
+        "Chennai"
+    ],
+    "641002": [
+        "Town Hall",
+        "Coimbatore"
+    ],
+    "560001": [
+        "MG Road",
+        "Bangalore"
+    ],
+    "560010": [
+        "Malleswaram",
+        "Bangalore"
+    ],
+    "560100": [
+        "Koramangala",
+        "Bangalore"
+    ],
+    "560076": [
+        "Jayanagar",
+        "Bangalore"
+    ],
+    "560032": [
+        "Indiranagar",
+        "Bangalore"
+    ],
+    "560103": [
+        "Banashankari",
+        "Bangalore"
+    ],
+    "560066": [
+        "Whitefield",
+        "Bangalore"
+    ],
+    "560011": [
+        "Vijayanagar",
+        "Bangalore"
+    ],
+    "560062": [
+        "Hebbal",
+        "Bangalore"
+    ],
+    "560064": [
+        "Yelahanka",
+        "Bangalore"
+    ],
+    "560097": [
+        "Electronic City",
+        "Bangalore"
+    ],
+    "560092": [
+        "Hesaraghatta",
+        "Bangalore"
+    ],
+    "380001": [
+        "Ashram Road",
+        "Ahmedabad"
+    ],
+    "395007": [
+        "Adajan",
+        "Surat"
+    ],
+    "360005": [
+        "Kalavad Road",
+        "Rajkot"
+    ],
+    "380009": [
+        "Ellis Bridge",
+        "Ahmedabad"
+    ],
+    "395009": [
+        "Varachha",
+        "Surat"
+    ],
+    "360002": [
+        "Dhebar Road",
+        "Rajkot"
+    ],
+    "380054": [
+        "Satellite",
+        "Ahmedabad"
+    ],
+    "395010": [
+        "Athwa",
+        "Surat"
+    ],
+    "360007": [
+        "Mavdi",
+        "Rajkot"
+    ],
+    "380006": [
+        "Naranpura",
+        "Ahmedabad"
+    ],
+    "395003": [
+        "Ring Road",
+        "Surat"
+    ],
+    "360001": [
+        "Mochi Bazar",
+        "Rajkot"
+    ],
+    "500001": [
+        "Koti",
+        "Hyderabad"
+    ],
+    "500082": [
+        "Madhapur",
+        "Hyderabad"
+    ],
+    "506002": [
+        "Hanamkonda",
+        "Warangal"
+    ],
+    "500034": [
+        "Banjara Hills",
+        "Hyderabad"
+    ],
+    "500072": [
+        "Gachibowli",
+        "Hyderabad"
+    ],
+    "506370": [
+        "Kazipet",
+        "Warangal"
+    ],
+    "500018": [
+        "Begumpet",
+        "Hyderabad"
+    ],
+    "500081": [
+        "Kukatpally",
+        "Hyderabad"
+    ],
+    "506013": [
+        "Jangaon",
+        "Warangal"
+    ],
+    "500027": [
+        "Himayat Nagar",
+        "Hyderabad"
+    ],
+    "500029": [
+        "Secunderabad",
+        "Hyderabad"
+    ],
+    "506007": [
+        "Mahabubabad",
+        "Warangal"
+    ],
+    "800001": [
+        "Patna City",
+        "Patna"
+    ],
+    "800020": [
+        "Digha",
+        "Patna"
+    ],
+    "823001": [
+        "Gaya",
+        "Gaya"
+    ],
+    "800004": [
+        "Rajendra Nagar",
+        "Patna"
+    ],
+    "800027": [
+        "Kankarbagh",
+        "Patna"
+    ],
+    "823003": [
+        "Bodh Gaya",
+        "Gaya"
+    ],
+    "800003": [
+        "Patliputra",
+        "Patna"
+    ],
+    "800001": [
+        "Ashok Rajpath",
+        "Patna"
+    ],
+    "823004": [
+        "Belaganj",
+        "Gaya"
+    ],
+    "800005": [
+        "Punaichak",
+        "Patna"
+    ],
+    "823005": [
+        "Wazirganj",
+        "Gaya"
+    ],
+    "800006": [
+        "Digha-Ashiana Road",
+        "Patna"
+    ],
+    "302001": [
+        "MI Road",
+        "Jaipur"
+    ],
+    "302018": [
+        "Malviya Nagar",
+        "Jaipur"
+    ],
+    "342003": [
+        "Sardarpura",
+        "Jodhpur"
+    ],
+    "302020": [
+        "Vaishali Nagar",
+        "Jaipur"
+    ],
+    "342005": [
+        "Ratanada",
+        "Jodhpur"
+    ],
+    "302006": [
+        "C-Scheme",
+        "Jaipur"
+    ],
+    "302021": [
+        "Jhotwara",
+        "Jaipur"
+    ],
+    "342001": [
+        "Mandore",
+        "Jodhpur"
+    ],
+    "302012": [
+        "Sanganer",
+        "Jaipur"
+    ],
+    "342009": [
+        "Bhagat Ki Kothi",
+        "Jodhpur"
+    ],
+    "302015": [
+        "Pratap Nagar",
+        "Jaipur"
+    ],
+    "342006": [
+        "Pal Road",
+        "Jodhpur"
+    ]
+}

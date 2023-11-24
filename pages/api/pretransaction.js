@@ -2,6 +2,7 @@ const https = require("https");
 import Order from "@/models/Order";
 import Product from "@/models/Product";
 import connectDb from "@/middleware/mongoose";
+import pincodes from "../../pincodes.json";
 
 const PaytmChecksum = require("paytmchecksum");
 const handler = async (req, res) => {
@@ -14,6 +15,17 @@ const handler = async (req, res) => {
       res.status(200).json({
         success: false,
         error: "Your cart is empty! Please add some products.",
+        cartClear: true,
+      });
+      return;
+    }
+
+    // check if the pincode is servicable
+    if (!Object.keys(pincodes).includes(req.body.pincode)) {
+      res.status(200).json({
+        success: false,
+        error: "Please enter a servicable pincode",
+        cartClear: false,
       });
       return;
     }
@@ -25,6 +37,7 @@ const handler = async (req, res) => {
         res.status(200).json({
           success: false,
           error: "Some Items in your cart are out of stock",
+          cartClear: true,
         });
         return;
       }
@@ -33,6 +46,7 @@ const handler = async (req, res) => {
         res.status(200).json({
           success: false,
           error: "Price Mismatch. Please try again !",
+          cartClear: true,
         });
         return;
       }
@@ -40,7 +54,11 @@ const handler = async (req, res) => {
     if (sumTotal !== req.body.subtotal) {
       res
         .status(200)
-        .json({ success: false, error: "Price Mismatch. Please try again !" });
+        .json({
+          success: false,
+          error: "Price Mismatch. Please try again !",
+          cartClear: true,
+        });
       return;
     }
 
@@ -52,7 +70,11 @@ const handler = async (req, res) => {
     ) {
       res
         .status(200)
-        .json({ success: false, error: "Please enter 10 digit Phone No.  !" });
+        .json({
+          success: false,
+          error: "Please enter 10 digit Phone No.  !",
+          cartClear: false,
+        });
       return;
     }
     if (
@@ -61,7 +83,11 @@ const handler = async (req, res) => {
     ) {
       res
         .status(200)
-        .json({ success: false, error: "Please enter 6 digit Pincode !" });
+        .json({
+          success: false,
+          error: "Please enter 6 digit Pincode !",
+          cartClear: false,
+        });
       return;
     }
 

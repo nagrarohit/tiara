@@ -7,7 +7,7 @@ import { FcShipped } from "react-icons/fc";
 const MyOrder = ({ order, clearCart }) => {
   const router = useRouter();
   const products = order.products;
-  console.log(order);
+
   useEffect(() => {
     if (router.query.clearCart == 1) {
       clearCart();
