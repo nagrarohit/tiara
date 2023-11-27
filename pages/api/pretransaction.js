@@ -52,13 +52,11 @@ const handler = async (req, res) => {
       }
     }
     if (sumTotal !== req.body.subtotal) {
-      res
-        .status(200)
-        .json({
-          success: false,
-          error: "Price Mismatch. Please try again !",
-          cartClear: true,
-        });
+      res.status(200).json({
+        success: false,
+        error: "Price Mismatch. Please try again !",
+        cartClear: true,
+      });
       return;
     }
 
@@ -68,26 +66,22 @@ const handler = async (req, res) => {
       req.body.phone.length < 10 ||
       !Number.isInteger(Number(req.body.phone))
     ) {
-      res
-        .status(200)
-        .json({
-          success: false,
-          error: "Please enter 10 digit Phone No.  !",
-          cartClear: false,
-        });
+      res.status(200).json({
+        success: false,
+        error: "Please enter 10 digit Phone No.  !",
+        cartClear: false,
+      });
       return;
     }
     if (
       req.body.pincode.length !== 6 ||
       !Number.isInteger(Number(req.body.pincode))
     ) {
-      res
-        .status(200)
-        .json({
-          success: false,
-          error: "Please enter 6 digit Pincode !",
-          cartClear: false,
-        });
+      res.status(200).json({
+        success: false,
+        error: "Please enter 6 digit Pincode !",
+        cartClear: false,
+      });
       return;
     }
 
@@ -96,6 +90,10 @@ const handler = async (req, res) => {
       email: req.body.email,
       orderId: req.body.oid,
       address: req.body.address,
+      name: req.body.name,
+      city: req.body.city,
+      state: req.body.state,
+      phone: req.body.phone,
       amount: req.body.subtotal,
       products: req.body.cart,
     });

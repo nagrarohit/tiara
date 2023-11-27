@@ -39,13 +39,13 @@ const Navbar = ({
       <div className="nav">
         <ul className="flex  items-center space-x-4 font-bold md:text-xl ">
           <Link href={"/necklace"}>
-            <li className="hover:text-cyan-700">Necklace</li>
+            <li className="hover:text-indigo-300">Necklace</li>
           </Link>
           <Link href={"/rings"}>
-            <li className="hover:text-cyan-700">Rings</li>
+            <li className="hover:text-indigo-300">Rings</li>
           </Link>
           <Link href={"/bangles"}>
-            <li className="hover:text-cyan-700">Bangles</li>
+            <li className="hover:text-indigo-300">Bangles</li>
           </Link>
         </ul>
       </div>
