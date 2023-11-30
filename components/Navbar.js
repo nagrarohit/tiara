@@ -86,40 +86,40 @@ const Navbar = ({
         </span>
         {!user.value && (
           <Link href="/login">
-            <button className="bg-gradient-to-t from-black via-gray-700 to-black text-white mx-2 px-4 py-2 rounded sm:px-2 sm:py-1">
+            <button className="bg-gray-600 hover:bg-indigo-300 hover:text-black text-white mx-2 px-4 py-2 rounded sm:px-2 sm:py-1">
               Login
             </button>
           </Link>
         )}
         <HiShoppingCart
           onClick={toggleCart}
-          className="text-xl md:text-4xl "
+          className="text-xl md:text-4xl hover:text-indigo-300 "
         ></HiShoppingCart>
       </div>
 
       <div
         ref={ref}
-        className=" w-72 h-[100vh] overflow-y-scroll sideCart absolute top-0 right-0 px-8 py-10 bg-gradient-to-t from-black via-gray-600 to-black text-white transform transition-transform translate-x-full"
+        className=" w-72 h-[100vh] overflow-y-scroll sideCart absolute top-0 right-0 px-8 py-10 bg-purple-200 text-white transform transition-transform translate-x-full"
       >
-        <h1 className="font-bold text-xl  text-gradient bg-gradient-to-r to-black from-white text-transparent bg-clip-text">
+        <h1 className="font-bold text-xl  text-black  bg-clip-text">
           Shopping cart
         </h1>
         <span
           onClick={toggleCart}
           className="absolute top-4 right-3 cursor-pointer text-2xl "
         >
-          <TfiClose className="bg-gradient-to-r from-black via-gray-400 to-black text-white" />
+          <TfiClose className="text-black" />
         </span>
-        <ol className="font-semibold text-white list-decimal">
+        <ol className="font-semibold text-black list-decimal">
           {Object.keys(cart).length === 0 ? (
-            <div className="my-4 font-semibold text-gradient bg-gradient-to-r to-black from-white text-transparent bg-clip-text">
+            <div className="my-4 font-semibold text-black bg-clip-text">
               There are no items in the cart
             </div>
           ) : (
             Object.keys(cart).map((k) => (
               <li key={k}>
                 <div className="item flex my-3">
-                  <div className="w-2/3 text-gradient bg-gradient-to-r to-black from-white text-transparent bg-clip-text">
+                  <div className="w-2/3 text-black bg-clip-text">
                     {cart[k].name}({cart[k].size}/{cart[k].variant})
                   </div>
                   <div className="w-1/3 flex items-center justify-center">
@@ -136,9 +136,7 @@ const Navbar = ({
                       }}
                       className="mx-1 cursor-pointer"
                     />
-                    <div className="text-gradient bg-gradient-to-tl to-black from-white text-transparent bg-clip-text">
-                      {cart[k].qty}
-                    </div>
+                    <div className="text-black bg-clip-text">{cart[k].qty}</div>
                     <AiOutlinePlusCircle
                       onClick={() => {
                         addToCart(
@@ -159,16 +157,14 @@ const Navbar = ({
           )}
         </ol>
         <div className="total font-bold my-2">
-          <p className="text-gradient bg-gradient-to-r to-black from-white text-transparent bg-clip-text">
-            subtotal: ${subtotal}
-          </p>
+          <p className="text-black bg-clip-text">subtotal: ${subtotal}</p>
         </div>
 
         <div className="flex">
           <Link href={"/checkout"}>
             <button
               disabled={Object.keys(cart).length === 0}
-              className="flex  disabled:bg-gray-300 bg-gradient-to-t from-black via-transparent to-black text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
+              className="flex  disabled:bg-gray-300 bg-gray-700 text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
             >
               <BsFillBagCheckFill className="m-1" />
               checkout
@@ -177,7 +173,7 @@ const Navbar = ({
           <button
             onClick={clearCart}
             disabled={Object.keys(cart).length === 0}
-            className="disabled:bg-gray-300 flex bg-gradient-to-t from-black via-transparent to-black text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
+            className="disabled:bg-gray-300 flex bg-gray-700 text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
           >
             clearCart
           </button>

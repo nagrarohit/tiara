@@ -131,14 +131,6 @@ const Login = () => {
                 >
                   Password
                 </label>
-                <div className="text-sm">
-                  <a
-                    href="/forgot"
-                    className="font-semibold text-gray-600 hover:text-gray-500"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
               </div>
               <div className="mt-2">
                 <input
@@ -157,7 +149,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-gray-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+                className="flex w-full justify-center rounded-md bg-gray-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-300 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
               >
                 Sign in
               </button>
@@ -168,7 +160,7 @@ const Login = () => {
             Not a member?
             <a
               href="signup"
-              className=" mx-3 font-semibold leading-6 text-gray-600 hover:text-gray-500"
+              className=" mx-3 font-semibold leading-6 text-gray-600 hover:text-indigo-300"
             >
               Sign Up!
             </a>

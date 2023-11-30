@@ -90,7 +90,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <LoadingBar
-        color="#000000"
+        color="linear-gradient(to right, #000000, #3F51B5)"
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />

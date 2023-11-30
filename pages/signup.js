@@ -151,7 +151,7 @@ const Signup = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-gray-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+                className="flex w-full justify-center rounded-md bg-gray-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  hover:bg-indigo-300 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
               >
                 Sign Up!
               </button>
@@ -162,7 +162,7 @@ const Signup = () => {
             Already a member?
             <a
               href="login"
-              className=" mx-3 font-semibold leading-6 text-gray-600 hover:text-gray-500"
+              className=" mx-3 font-semibold leading-6 text-gray-600 hover:text-indigo-300"
             >
               Sign in
             </a>
