@@ -22,7 +22,7 @@ const necklace = ({ products }) => {
                   className="lg:w-1/4 md:w-1/2 p-4 w-full cursor-pointer"
                 >
                   <Link href={`/product/${products[item].slug}`} passHref>
-                    <div className="block relative rounded overflow-hidden">
+                    <div className="block relative rounded overflow-hidden image-container">
                       <img
                         alt="ecommerce"
                         className="object-cover object-center w-full h-full block"

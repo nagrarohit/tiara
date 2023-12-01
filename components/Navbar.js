@@ -30,7 +30,7 @@ const Navbar = ({
   };
   const ref = useRef();
   return (
-    <div className=" flex flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl sticky top-0 bg-white z-10">
+    <div className=" flex flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl sticky top-0 bg-white z-10 border-b-4 border-black">
       <div className="logo mr-auto md:mx-5">
         <Link href={"/"}>
           <Image width={200} height={25} src="/textlogo.png" alt=" "></Image>
@@ -39,13 +39,13 @@ const Navbar = ({
       <div className="nav">
         <ul className="flex  items-center space-x-4 font-bold md:text-xl ">
           <Link href={"/necklace"}>
-            <li className="hover:text-indigo-300">Necklace</li>
+            <li className=" nav-link">Necklace</li>
           </Link>
           <Link href={"/rings"}>
-            <li className="hover:text-indigo-300">Rings</li>
+            <li className="nav-link">Rings</li>
           </Link>
           <Link href={"/bangles"}>
-            <li className="hover:text-indigo-300">Bangles</li>
+            <li className="nav-link">Bangles</li>
           </Link>
         </ul>
       </div>
@@ -86,7 +86,7 @@ const Navbar = ({
         </span>
         {!user.value && (
           <Link href="/login">
-            <button className="bg-gray-600 hover:bg-indigo-300 hover:text-black text-white mx-2 px-4 py-2 rounded sm:px-2 sm:py-1">
+            <button className="bg-black hover:bg-indigo-300 hover:text-black text-white mx-2 px-4 py-2 rounded sm:px-2 sm:py-1">
               Login
             </button>
           </Link>
@@ -164,7 +164,7 @@ const Navbar = ({
           <Link href={"/checkout"}>
             <button
               disabled={Object.keys(cart).length === 0}
-              className="flex  disabled:bg-gray-300 bg-gray-700 text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
+              className="flex  disabled:bg-gray-300 bg-transparent text-white hover:text-gray-700 hover:bg-white border-2 border-white py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
             >
               <BsFillBagCheckFill className="m-1" />
               checkout
@@ -173,7 +173,8 @@ const Navbar = ({
           <button
             onClick={clearCart}
             disabled={Object.keys(cart).length === 0}
-            className="disabled:bg-gray-300 flex bg-gray-700 text-white border-0 py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
+            className="disabled:bg-gray-300 flex bg-transparent border-2 border-white
+            hover:text-gray-700 hover:bg-white text-white  py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
           >
             clearCart
           </button>

@@ -76,11 +76,11 @@ const post = ({ buyNow, addToCart, product, variants }) => {
         />
         {/* Same as */}
         <ToastContainer />
-        <div className="container px-5 py-10 mx-auto">
-          <div className="lg:w-4/5 mx-auto flex flex-wrap">
+        <div className="container px-5 py-10 mx-auto ">
+          <div className="lg:w-4/5 mx-auto flex flex-wrap min-h-screen">
             <img
               alt="ecommerce"
-              className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+              className="lg:w-1/2 w-full  h-64 object-contain object-center lg:h-96 rounded"
               src={product.img}
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -365,7 +365,7 @@ const post = ({ buyNow, addToCart, product, variants }) => {
                   onClick={checkServiceability}
                   className=" text-white bg-slate-500 border-0 py-2 px-6 focus:outline-none hover:bg-slate-600 rounded"
                 >
-                  Check Pincode
+                  Check
                 </button>
               </div>
               {!service && service != null && (

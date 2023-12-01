@@ -34,3 +34,50 @@ body {
 #city::placeholder {
   color: black;
 }
+
+.image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.card {
+  width: 100%;
+  max-width: 400px; /* Set a max width for the card */
+  margin: 0 auto; /* Center the card on the page */
+  display: flex;
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
+  overflow: hidden; /* Hide overflow for images exceeding the card size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for styling */
+  border-radius: 8px; /* Add rounded corners */
+}
+
+/* styles.css */
+
+/* Define styles for the progress bar */
+.nav-link {
+  position: relative;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black; /* Set the color of the progress bar to indigo-300 */
+  transition: width 0.2s ease; /* Add a smooth transition effect */
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
