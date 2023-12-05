@@ -88,7 +88,7 @@ const Login = () => {
       />
       {/* Same as */}
       <ToastContainer />
-      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
@@ -164,6 +164,13 @@ const Login = () => {
             >
               Sign Up!
             </a>
+          </p>
+          <p className="mt-4 text-center text-sm text-gray-500">
+            If you want, you can use a dummy account for sign-in.
+            <br />
+            <b className="block mt-2  text-center text-sm text-gray-500">
+              test10@gmail.com, password
+            </b>
           </p>
         </div>
       </div>

@@ -81,3 +81,15 @@ body {
 .nav-link:hover::after {
   width: 100%;
 }
+
+.custom-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  transform-origin: center center;
+}
+
+.custom-image:hover {
+  transform: scale(1.1);
+}
