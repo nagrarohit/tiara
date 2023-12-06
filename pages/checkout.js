@@ -157,6 +157,9 @@ const Checkout = ({ cart, clearCart, subtotal, addToCart, removeFromCart }) => {
 
   return (
     <div className=" px-5 py-24 mx-auto  checkout-container shadow-lg  ">
+      <Head>
+        <title>Checkout</title>
+      </Head>
       <img src="/payment.svg" alt="background" className="background-img" />
       <ToastContainer
         position="top-left"

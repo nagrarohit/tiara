@@ -2,10 +2,14 @@ import React from "react";
 import Product from "@/models/Product";
 import mongoose from "mongoose";
 import Link from "next/link";
+import Head from "next/head";
 
 const necklace = ({ products }) => {
   return (
     <div>
+      <Head>
+        <title>Necklace</title>
+      </Head>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4 justify-center">

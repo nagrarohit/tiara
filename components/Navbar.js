@@ -30,7 +30,7 @@ const Navbar = ({
   };
   const ref = useRef();
   return (
-    <div className=" flex flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl sticky top-0 bg-white z-10 border-b-4 border-black">
+    <div className=" flex flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl sticky top-0 bg-white z-10 ">
       <div className="logo mr-auto md:mx-5">
         <Link href={"/"}>
           <Image width={200} height={25} src="/textlogo.png" alt=" "></Image>

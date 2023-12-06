@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 
 const Orders = () => {
   const router = useRouter();
@@ -29,6 +30,9 @@ const Orders = () => {
   }, []);
   return (
     <div>
+      <Head>
+        <title>My orders</title>
+      </Head>
       <div className="container min-h-screen">
         <h1 className="font-bold text-xl p-8 text-center">My Orders</h1>
         <div className="items">

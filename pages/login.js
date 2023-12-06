@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Head from "next/head";
 
 const Login = () => {
   const router = useRouter();
@@ -74,6 +75,9 @@ const Login = () => {
 
   return (
     <div>
+      <Head>
+        <title>login</title>
+      </Head>
       <ToastContainer
         position="top-right"
         autoClose={5000}

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React from "react";
+import Head from "next/head";
 
 const post = ({ buyNow, addToCart, product, variants }) => {
   const router = useRouter();
@@ -55,12 +56,15 @@ const post = ({ buyNow, addToCart, product, variants }) => {
 
   const refreshVariants = (newsize, newcolor) => {
     console.log("newsize and newcolor are:  ", newsize, newcolor);
-    let url = `http://localhost:3000/product/${variants[newcolor][newsize]["slug"]}`;
+    let url = `${process.env.NEXT_PUBLIC_HOST}/product/${variants[newcolor][newsize]["slug"]}`;
     console.log("url:", url);
     window.location = url;
   };
   return (
     <>
+      <Head>
+        <title>Product</title>
+      </Head>
       <section className="text-gray-600 body-font overflow-hidden">
         <ToastContainer
           position="top-right"
