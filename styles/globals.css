@@ -93,3 +93,16 @@ body {
 .custom-image:hover {
   transform: scale(1.1);
 }
+
+/* styles.css */
+
+.my-awesome-button {
+  transition: background-color 0.4s ease;
+  text: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #e6e6fa;
+}
+
+.my-awesome-button:hover {
+  background-color: #2d3748;
+}

@@ -234,7 +234,7 @@ const myaccount = () => {
       <div className="flex justify-center items-center mt-4">
         <button
           onClick={handleUserSubmit}
-          className="  flex  bg-gray-600 text-white border-0 py-2 px-2  focus:outline-none hover:bg-indigo-300 rounded text-sm"
+          className="flex py-1 px-1 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
         >
           Submit
         </button>
@@ -301,7 +301,7 @@ const myaccount = () => {
       <div className="flex justify-center items-center mt-4">
         <button
           onClick={handlePasswordSubmit}
-          className="  flex  bg-gray-600 text-white border-0 py-2 px-2  focus:outline-none hover:bg-indigo-300 rounded text-sm"
+          className="  flex py-1 px-1 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
         >
           Submit
         </button>

@@ -49,7 +49,7 @@ const Orders = () => {
                   <th scope="col" className="px-6 py-3">
                     Amount
                   </th>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="px-6 py-3 ">
                     Details
                   </th>
                 </tr>
@@ -71,7 +71,9 @@ const Orders = () => {
                       <td className="px-6 py-4">{item.amount}</td>
                       <td className="px-6 py-4">
                         <Link legacyBehavior href={`/order?id=` + item._id}>
-                          <a>Details</a>
+                          <a className=" hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md p-2">
+                            Details
+                          </a>
                         </Link>
                       </td>
                     </tr>

@@ -19,6 +19,7 @@ const Navbar = ({
   subtotal,
 }) => {
   const [dropdown, setDropdown] = useState(false);
+  const [dropdown2, setDropdown2] = useState(false);
   const toggleCart = () => {
     if (ref.current.classList.contains("translate-x-full")) {
       ref.current.classList.remove("translate-x-full");
@@ -47,6 +48,59 @@ const Navbar = ({
           <Link href={"/bangles"}>
             <li className="nav-link">Bangles</li>
           </Link>
+          <div className=" cursor-pointer">
+            <span
+              onMouseOver={() => {
+                setDropdown2(true);
+              }}
+              onMouseLeave={() => {
+                setDropdown2(false);
+              }}
+            >
+              {dropdown2 && (
+                <div className="rounded-md w-28  text-white text-center absolute mt-4 ">
+                  <ul className=" font-mono mt-4 ">
+                    <Link href={"/glasses"}>
+                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
+                        Glasses
+                      </li>
+                    </Link>
+                    <Link href={"/bags"}>
+                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
+                        Bags
+                      </li>
+                    </Link>
+                    <Link href={"/cufflinks"}>
+                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
+                        Cufflinks
+                      </li>
+                    </Link>
+                    <Link href={"/earings"}>
+                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
+                        Earings
+                      </li>
+                    </Link>
+                    <Link href={"/hairclips"}>
+                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
+                        Hairclips
+                      </li>
+                    </Link>
+                    <Link href={"/perfumes"}>
+                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
+                        Perfumes
+                      </li>
+                    </Link>
+                    <Link href={"/watches"}>
+                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
+                        Watches
+                      </li>
+                    </Link>
+                  </ul>
+                </div>
+              )}
+              <li className="nav-link">More</li>
+            </span>
+          </div>
         </ul>
       </div>
       <div className=" cursor-pointer items-center cart absolute right-0 top-9 mx-5 flex ">
@@ -59,21 +113,21 @@ const Navbar = ({
           }}
         >
           {dropdown && (
-            <div className="rounded-md w-36 px-5 bg-gradient-to-t from-black via-gray-600 to-black text-white absolute right-20 top-3">
-              <ul className="text-gradient bg-gradient-to-l from-emerald-300 to-white text-transparent bg-clip-text font-mono py-4">
+            <div className="rounded-md w-36 px-5 absolute right-20 top-3">
+              <ul className=" font-mono py-4 ">
                 <Link href={"/myaccount"}>
-                  <li className="hover:text-gray-100 border border-pink-300 rounded p-2 py-3 mb-2 hover:border-pink-500">
+                  <li className=" border border-gray-300 rounded p-2 py-3 mb-2 hover:border-gray-900 hover:text-gray-700 nav-link">
                     Account
                   </li>
                 </Link>
                 <Link href={"/orders"}>
-                  <li className="hover:text-gray-100 border border-blue-300 rounded p-2 py-3 mb-2 hover:border-blue-500">
+                  <li className=" border border-gray-300 rounded p-2 py-3 mb-2 hover:border-gray-900 hover:text-gray-700 nav-link">
                     Orders
                   </li>
                 </Link>
                 <li
                   onClick={logout}
-                  className="hover:text-gray-100 border border-gray-300 rounded p-2 py-3 hover:border-gray-500"
+                  className=" border border-gray-300 rounded p-2 py-3 hover:border-gray-900 hover:text-gray-700 nav-link"
                 >
                   Logout
                 </li>
@@ -164,7 +218,7 @@ const Navbar = ({
           <Link href={"/checkout"}>
             <button
               disabled={Object.keys(cart).length === 0}
-              className="flex  disabled:bg-gray-300 bg-transparent text-white hover:text-gray-700 hover:bg-white border-2 border-white py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
+              className="flex py-2 px-2 mr-2 disabled:bg-gray-400 text-gray-600 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
             >
               <BsFillBagCheckFill className="m-1" />
               checkout
@@ -173,8 +227,7 @@ const Navbar = ({
           <button
             onClick={clearCart}
             disabled={Object.keys(cart).length === 0}
-            className="disabled:bg-gray-300 flex bg-transparent border-2 border-white
-            hover:text-gray-700 hover:bg-white text-white  py-2 px-2 mr-2 focus:outline-none  rounded text-sm"
+            className="disabled:bg-gray-400 flex py-2 px-2 mr-2  text-gray-600 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
           >
             clearCart
           </button>

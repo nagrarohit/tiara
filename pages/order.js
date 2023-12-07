@@ -67,7 +67,7 @@ const MyOrder = ({ order, clearCart }) => {
               <span className="title-font font-medium text-2xl text-gray-900">
                 Subtotal: ${order.amount}
               </span>
-              <button className="flex ml-auto text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded">
+              <button className="flex ml-auto py-2 px-6  hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md">
                 Track Order
               </button>
             </div>

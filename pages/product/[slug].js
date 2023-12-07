@@ -325,7 +325,7 @@ const post = ({ buyNow, addToCart, product, variants }) => {
                       product.color
                     );
                   }}
-                  className="flex ml-auto  disabled:bg-slate-300 text-white bg-slate-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-slate-600 rounded"
+                  className="flex ml-auto py-2 md:px-6  disabled:bg-slate-300 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
                 >
                   Add to cart
                 </button>
@@ -341,7 +341,7 @@ const post = ({ buyNow, addToCart, product, variants }) => {
                       product.color
                     );
                   }}
-                  className="flex ml-auto disabled:bg-slate-300 text-white bg-slate-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-slate-600 rounded"
+                  className="flex ml-auto py-2 md:px-6 disabled:bg-slate-300 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
                 >
                   Buy Now
                 </button>
@@ -361,13 +361,13 @@ const post = ({ buyNow, addToCart, product, variants }) => {
               <div className="pin mt-6 flex space-x-12">
                 <input
                   onChange={onChangePin}
-                  className="px-2 border-2 border-gray-300 rounded-lg"
+                  className="px-2 border-2 border-gray-500 rounded-lg"
                   type="text "
                   placeholder="Please enter pincode"
                 />
                 <button
                   onClick={checkServiceability}
-                  className=" text-white bg-slate-500 border-0 py-2 px-6 focus:outline-none hover:bg-slate-600 rounded"
+                  className="py-2 px-6 mb-1 flex-1  focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
                 >
                   Check
                 </button>
