@@ -2,6 +2,11 @@ import Head from "next/head";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { PiCoatHangerThin } from "react-icons/pi";
 import { MdOutlineRedeem } from "react-icons/md";
+import { FaGooglePay } from "react-icons/fa";
+import { BsPaypal } from "react-icons/bs";
+import { FaCcMastercard } from "react-icons/fa6";
+import { RiVisaLine } from "react-icons/ri";
+
 export default function Home() {
   return (
     <div>
@@ -253,6 +258,13 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+          <div className="flex justify-center mt-12 w-full ">
+            {" "}
+            <FaGooglePay className="text-7xl text-blue-600 " />
+            <BsPaypal className="text-7xl text-sky-400 ml-8" />
+            <FaCcMastercard className="text-7xl text-yellow-500 ml-8" />
+            <RiVisaLine className="text-7xl text-lime-500 ml-8" />
           </div>
         </div>
       </section>

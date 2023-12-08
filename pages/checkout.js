@@ -371,7 +371,7 @@ const Checkout = ({ cart, clearCart, subtotal, addToCart, removeFromCart }) => {
           <button
             onClick={intiatePayment}
             disabled={disabled}
-            className=" disabled:bg-gray-300 flex  bg-gray-600 text-white border-0 py-2 px-2 mr-2 focus:outline-none hover:bg-indigo-300 rounded text-sm"
+            className=" disabled:bg-gray-300 disabled:cursor-not-allowed flex  bg-gray-600 text-white border-0 py-2 px-2 mr-2 focus:outline-none hover:bg-indigo-300 rounded text-sm"
           >
             <BsFillBagCheckFill className="m-1" />
             Pay ${subtotal}

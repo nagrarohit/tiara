@@ -1,8 +1,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-import { HiShoppingCart } from "react-icons/hi";
+import { BsCartPlus, BsCartPlusFill } from "react-icons/bs";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";
 import { TfiClose } from "react-icons/tfi";
 import { BsFillBagCheckFill } from "react-icons/bs";
@@ -31,7 +30,7 @@ const Navbar = ({
   };
   const ref = useRef();
   return (
-    <div className=" flex flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl sticky top-0 bg-white z-10 ">
+    <div className=" flex flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl sticky top-0  bg-transparent backdrop-blur-md z-10 ">
       <div className="logo mr-auto md:mx-5">
         <Link href={"/"}>
           <Image width={200} height={25} src="/textlogo.png" alt=" "></Image>
@@ -91,7 +90,7 @@ const Navbar = ({
                       </li>
                     </Link>
                     <Link href={"/watches"}>
-                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
+                      <li className="hover:text-gray-700  border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
                         Watches
                       </li>
                     </Link>
@@ -145,15 +144,23 @@ const Navbar = ({
             </button>
           </Link>
         )}
-        <HiShoppingCart
-          onClick={toggleCart}
-          className="text-xl md:text-4xl hover:text-indigo-300 "
-        ></HiShoppingCart>
+        {Object.keys(cart).length == 0 && (
+          <BsCartPlus
+            onClick={toggleCart}
+            className="text-xl md:text-4xl hover:text-indigo-300 "
+          ></BsCartPlus>
+        )}
+        {Object.keys(cart).length > 0 && (
+          <BsCartPlusFill
+            onClick={toggleCart}
+            className="text-xl md:text-4xl text-sky-700 "
+          ></BsCartPlusFill>
+        )}
       </div>
 
       <div
         ref={ref}
-        className=" w-72 h-[100vh] overflow-y-scroll sideCart absolute top-0 right-0 px-8 py-10 bg-purple-200 text-white transform transition-transform translate-x-full"
+        className=" w-72 h-[100vh] overflow-y-scroll sideCart absolute top-0 right-0 px-8 py-10 bg-gradient-to-r from-pink-500 to-yellow-500 text-white transform transition-transform translate-x-full"
       >
         <h1 className="font-bold text-xl  text-black  bg-clip-text">
           Shopping cart
@@ -218,7 +225,7 @@ const Navbar = ({
           <Link href={"/checkout"}>
             <button
               disabled={Object.keys(cart).length === 0}
-              className="flex py-2 px-2 mr-2 disabled:bg-gray-400 text-gray-600 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
+              className="flex py-2 px-2 mr-2 disabled:bg-gray-400 disabled:cursor-not-allowed text-gray-600 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
             >
               <BsFillBagCheckFill className="m-1" />
               checkout
@@ -227,7 +234,7 @@ const Navbar = ({
           <button
             onClick={clearCart}
             disabled={Object.keys(cart).length === 0}
-            className="disabled:bg-gray-400 flex py-2 px-2 mr-2  text-gray-600 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
+            className="disabled:bg-gray-400 disabled:cursor-not-allowed flex py-2 px-2 mr-2  text-gray-600 focus:outline-none hover:text-white border-2 border-gray-500  hover:border-gray-900  my-awesome-button rounded-md"
           >
             clearCart
           </button>
