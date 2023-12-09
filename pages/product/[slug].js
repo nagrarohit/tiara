@@ -55,9 +55,7 @@ const post = ({ buyNow, addToCart, product, variants }) => {
   };
 
   const refreshVariants = (newsize, newcolor) => {
-    console.log("newsize and newcolor are:  ", newsize, newcolor);
     let url = `${process.env.NEXT_PUBLIC_HOST}/product/${variants[newcolor][newsize]["slug"]}`;
-    console.log("url:", url);
     window.location = url;
   };
   return (

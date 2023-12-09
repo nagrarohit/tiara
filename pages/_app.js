@@ -99,6 +99,7 @@ export default function App({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
         />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar
         logout={logout}

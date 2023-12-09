@@ -33,7 +33,7 @@ const Orders = () => {
       <Head>
         <title>My orders</title>
       </Head>
-      <div className="container min-h-screen">
+      <div className="container min-h-screen ">
         <h1 className="font-bold text-xl p-8 text-center">My Orders</h1>
         <div className="items">
           <div className="relative p-8  overflow-x-auto">

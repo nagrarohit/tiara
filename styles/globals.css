@@ -104,3 +104,15 @@ body {
 .my-awesome-button:hover {
   background-color: #2d3748;
 }
+
+.custom-image1 {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  transform-origin: center center;
+}
+
+.custom-image1:hover {
+  transform: scale(1.3);
+}

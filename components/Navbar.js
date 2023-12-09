@@ -33,7 +33,13 @@ const Navbar = ({
     <div className=" flex flex-col md:flex-row md:justify-normal justify-center items-center py-2 shadow-xl sticky top-0  bg-transparent backdrop-blur-md z-10 ">
       <div className="logo mr-auto md:mx-5">
         <Link href={"/"}>
-          <Image width={200} height={25} src="/textlogo.png" alt=" "></Image>
+          <Image
+            className="bg-transparent"
+            width={150}
+            height={10}
+            src="/Tiara1.png"
+            alt=" "
+          ></Image>
         </Link>
       </div>
       <div className="nav">

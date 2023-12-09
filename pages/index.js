@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Tiara </title>
-        <meta name="discription" content="Tiara , A piece of Beauty"></meta>
+        <meta name="description" content="Tiara , A piece of Beauty"></meta>
         Hey! This is Tiara Website made for jewelerry sellinig basically a
         e-commerce website.
       </Head>
@@ -54,7 +54,7 @@ export default function Home() {
                 <a href="/rings">
                   <img
                     className=" custom-image"
-                    src="https://3.bp.blogspot.com/-i-JXqS3KmJY/UDqRgHlrn-I/AAAAAAAAA7M/S2iZKMFfngY/s1600/Matching-wedding-ring.jpg"
+                    src="/rings.jpg"
                     alt=""
                     width="610"
                     height="768"
@@ -65,7 +65,7 @@ export default function Home() {
                 <a href="/hairclips">
                   <img
                     className="custom-image "
-                    src="https://www.refinery29.com/images/8944970.jpeg"
+                    src="/hairclips.jpg"
                     alt=""
                     width="610"
                     height="500"
@@ -76,7 +76,7 @@ export default function Home() {
                 <a href="/noserings">
                   <img
                     className=" custom-image"
-                    src="https://i.etsystatic.com/29241360/r/il/896d5a/3299729483/il_1140xN.3299729483_jpc1.jpg"
+                    src="/noserings.jpg"
                     alt=""
                     width="610"
                     height="566"
@@ -89,7 +89,7 @@ export default function Home() {
                 <a href="/bangles">
                   <img
                     className="custom-image"
-                    src="https://www.chidambaramcovering.com/image/cache/catalog/Bangles/bng208-2.4-size-4-pieces-latest-daily-wear-gold-design-thin-bangles-indian-artificial-bangles-set-online-160-1-1700x2000.jpg"
+                    src="/bangles.jpg"
                     alt=""
                     width="610"
                     height="598"
@@ -100,7 +100,7 @@ export default function Home() {
                 <a href="perfumes">
                   <img
                     className="custom-image"
-                    src="https://fimgs.net/mdimg/secundar/o.61380.jpg"
+                    src="/perfumes.jpg"
                     alt=""
                     width="610"
                     height="854"
@@ -111,7 +111,7 @@ export default function Home() {
                 <a href="/earings">
                   <img
                     className="custom-image"
-                    src="https://blog.melorra.com/wp-content/uploads/2019/08/Final-Stud-Earrings.jpg"
+                    src="/earings.jpg"
                     alt=""
                     width="610"
                     height="382"
@@ -124,7 +124,7 @@ export default function Home() {
                 <a href="/necklace">
                   <img
                     className="custom-image"
-                    src="https://www.styleskier.com/wp-content/uploads/2017/08/diamond-necklace-for-women-luxury-jewelry-luxury-women-diamonds-necklace-great-for-bridal-jewelry-syfbiuz-.jpg"
+                    src="/necklace.jpg"
                     alt=""
                     width="610"
                     height="850"
@@ -135,7 +135,7 @@ export default function Home() {
                 <a href="/handcuffs">
                   <img
                     className="custom-image"
-                    src="https://i.etsystatic.com/5344384/r/il/26825d/2315948823/il_fullxfull.2315948823_53g9.jpg"
+                    src="/handcuffs.jpg"
                     alt=""
                     width="610"
                     height="464"
@@ -146,7 +146,7 @@ export default function Home() {
                 <a href="/cufflinks">
                   <img
                     className="custom-image"
-                    src="https://i.pinimg.com/originals/5a/54/64/5a54640a56640ab27885573730003df8.jpg"
+                    src="/cufflinks.jpg"
                     alt=""
                     width="610"
                     height="520"
@@ -159,7 +159,7 @@ export default function Home() {
                 <a href="/glasses">
                   <img
                     className="custom-image"
-                    src="https://rukminim2.flixcart.com/image/832/832/l55nekw0/sunglass/5/p/w/m-wm-sun-234-wemall-original-imagfwdrpzfsnsmw.jpeg?q=70"
+                    src="/glasses.jpg"
                     alt=""
                     width="610"
                     height="422"
@@ -170,7 +170,7 @@ export default function Home() {
                 <a href="/watches">
                   <img
                     className="custom-image"
-                    src="https://images.urbndata.com/is/image/Anthropologie/86954955_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720"
+                    src="/watches.jpg"
                     alt=""
                     width="610"
                     height="1024"
@@ -181,7 +181,7 @@ export default function Home() {
                 <a href="/bags">
                   <img
                     className="custom-image"
-                    src="https://m.media-amazon.com/images/I/71mjYUhsmbL._AC_SY675_.jpg"
+                    src="/bags.jpg"
                     alt=""
                     width="610"
                     height="388"
