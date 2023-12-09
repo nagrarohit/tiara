@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";
+import { FaPlus } from "react-icons/fa6";
+import { TiMinus } from "react-icons/ti";
 import Link from "next/link";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import Head from "next/head";
@@ -331,7 +332,7 @@ const Checkout = ({ cart, clearCart, subtotal, addToCart, removeFromCart }) => {
                     {cart[k].name}({cart[k].size}/{cart[k].variant})
                   </div>
                   <div className="w-1/3 flex items-center justify-center">
-                    <AiOutlineMinusCircle
+                    <TiMinus
                       onClick={() => {
                         removeFromCart(
                           k,
@@ -345,7 +346,7 @@ const Checkout = ({ cart, clearCart, subtotal, addToCart, removeFromCart }) => {
                       className="mx-1 cursor-pointer"
                     />
                     {cart[k].qty}
-                    <AiOutlinePlusCircle
+                    <FaPlus
                       onClick={() => {
                         addToCart(
                           k,
