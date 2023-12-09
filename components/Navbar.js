@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BsCartPlus, BsCartPlusFill } from "react-icons/bs";
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";
 import { FaPlus } from "react-icons/fa6";
 import { TiMinus } from "react-icons/ti";
 import { TfiClose } from "react-icons/tfi";
