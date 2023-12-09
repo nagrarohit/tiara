@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsCartPlus, BsCartPlusFill } from "react-icons/bs";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/Ai";
+import { FaPlus } from "react-icons/fa6";
+import { TiMinus } from "react-icons/ti";
 import { TfiClose } from "react-icons/tfi";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { VscAccount } from "react-icons/vsc";
@@ -190,7 +192,7 @@ const Navbar = ({
                     {cart[k].name}({cart[k].size}/{cart[k].variant})
                   </div>
                   <div className="w-1/3 flex items-center justify-center">
-                    <AiOutlineMinusCircle
+                    <TiMinus
                       onClick={() => {
                         removeFromCart(
                           k,
@@ -201,10 +203,10 @@ const Navbar = ({
                           cart[k].variant
                         );
                       }}
-                      className="mx-1 cursor-pointer"
+                      className="mx-1 cursor-pointer "
                     />
                     <div className="text-black bg-clip-text">{cart[k].qty}</div>
-                    <AiOutlinePlusCircle
+                    <FaPlus
                       onClick={() => {
                         addToCart(
                           k,
@@ -215,7 +217,7 @@ const Navbar = ({
                           cart[k].variant
                         );
                       }}
-                      className="mx-1 cursor-pointer"
+                      className="mx-1 cursor-pointer "
                     />
                   </div>
                 </div>
