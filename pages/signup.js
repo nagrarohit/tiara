@@ -57,7 +57,7 @@ const Signup = () => {
   return (
     <div>
       <Head>
-        <title>Sing Up</title>
+        <title>Sign Up</title>
       </Head>
       <ToastContainer
         position="top-right"
