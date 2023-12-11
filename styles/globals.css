@@ -24,6 +24,9 @@ body {
   .background-img {
     object-fit: cover;
   }
+  body {
+    overflow-x: hidden;
+  }
 }
 #pincode::placeholder {
   color: black;
