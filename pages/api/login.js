@@ -6,6 +6,7 @@ var jwt = require("jsonwebtoken");
 const handler = async (req, res) => {
   if (req.method == "POST") {
     let user = await User.findOne({ email: req.body.email });
+    console.log(user);
     const bytes = CryptoJS.AES.decrypt(user.password, process.env.AES_SECRET);
     let decryptedPass = bytes.toString(CryptoJS.enc.Utf8);
     if (user) {

@@ -10,9 +10,15 @@ const Rings = ({ products }) => {
       <Head>
         <title>rings</title>
       </Head>
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font min-h-screen">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4 justify-center">
+            {Object.keys(products).length === 0 && (
+              <p>
+                Sorry The rings are Out of Stock. Stay Tuned They are on the
+                way!
+              </p>
+            )}
             {Object.keys(products).map((item) => {
               return (
                 <div
