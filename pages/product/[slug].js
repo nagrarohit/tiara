@@ -82,12 +82,12 @@ const post = ({ buyNow, addToCart, product, variants }) => {
           <div className="lg:w-4/5 mx-auto flex flex-wrap min-h-screen">
             <img
               alt="ecommerce"
-              className="lg:w-1/2 w-full  h-64 object-contain object-center lg:h-96 rounded"
+              className="lg:w-1/2 w-full  h-64 object-contain object-center lg:h-96 rounded "
               src={product.img}
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                Tiara Ring
+                Tiara products
               </h2>
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
                 {product.title}({product.size}/{product.color})
@@ -220,6 +220,7 @@ const post = ({ buyNow, addToCart, product, variants }) => {
                         }`}
                       ></button>
                     )}
+
                   {Object.keys(variants).includes("golden") &&
                     Object.keys(variants["golden"]).includes(size) && (
                       <button

@@ -167,7 +167,7 @@ const Navbar = ({
 
       <div
         ref={ref}
-        className=" w-72 h-[100vh] overflow-y-scroll sideCart absolute top-0 right-0 px-8 py-10 bg-gradient-to-r from-pink-500 to-yellow-500 text-white transform transition-transform translate-x-full"
+        className=" w-72 h-[100vh] overflow-y-scroll sideCart absolute top-0 right-0 px-8 py-10 bg-gradient-to-r from-gray-100 to-pink-200 text-white transform transition-transform translate-x-full"
       >
         <h1 className="font-bold text-xl  text-black  bg-clip-text">
           Shopping cart
