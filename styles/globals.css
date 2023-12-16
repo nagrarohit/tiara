@@ -61,8 +61,6 @@ body {
   border-radius: 8px; /* Add rounded corners */
 }
 
-/* styles.css */
-
 /* Define styles for the progress bar */
 .nav-link {
   position: relative;
@@ -77,7 +75,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: black; /* Set the color of the progress bar to indigo-300 */
+  background-color: black;
   transition: width 0.2s ease; /* Add a smooth transition effect */
 }
 

@@ -8,6 +8,7 @@ import { TfiClose } from "react-icons/tfi";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { VscAccount } from "react-icons/vsc";
 import { useState } from "react";
+import DropdownButton from "./DropdownButton";
 
 const Navbar = ({
   logout,
@@ -18,8 +19,11 @@ const Navbar = ({
   clearCart,
   subtotal,
 }) => {
-  const [dropdown, setDropdown] = useState(false);
-  const [dropdown2, setDropdown2] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   const toggleCart = () => {
     if (ref.current.classList.contains("translate-x-full")) {
       ref.current.classList.remove("translate-x-full");
@@ -54,96 +58,53 @@ const Navbar = ({
           <Link href={"/bangles"}>
             <li className="nav-link">Bangles</li>
           </Link>
-          <div className=" cursor-pointer">
-            <span
-              onMouseOver={() => {
-                setDropdown2(true);
-              }}
-              onMouseLeave={() => {
-                setDropdown2(false);
-              }}
-            >
-              {dropdown2 && (
-                <div className="rounded-md w-28  text-white text-center absolute mt-4 ">
-                  <ul className=" font-mono mt-4 ">
-                    <Link href={"/glasses"}>
-                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
-                        Glasses
-                      </li>
-                    </Link>
-                    <Link href={"/bags"}>
-                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
-                        Bags
-                      </li>
-                    </Link>
-                    <Link href={"/cufflinks"}>
-                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
-                        Cufflinks
-                      </li>
-                    </Link>
-                    <Link href={"/earings"}>
-                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
-                        Earings
-                      </li>
-                    </Link>
-                    <Link href={"/hairclips"}>
-                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
-                        Hairclips
-                      </li>
-                    </Link>
-                    <Link href={"/perfumes"}>
-                      <li className="hover:text-gray-700 border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
-                        Perfumes
-                      </li>
-                    </Link>
-                    <Link href={"/watches"}>
-                      <li className="hover:text-gray-700  border border-gray-300 rounded mb-1 hover:border-gray-900 text-black nav-link">
-                        Watches
-                      </li>
-                    </Link>
-                  </ul>
-                </div>
-              )}
-              <li className="nav-link">More</li>
-            </span>
-          </div>
+          <DropdownButton />
         </ul>
       </div>
-      <div className=" cursor-pointer items-center cart absolute right-0 top-9 mx-5 flex ">
-        <span
-          onMouseOver={() => {
-            setDropdown(true);
-          }}
-          onMouseLeave={() => {
-            setDropdown(false);
-          }}
-        >
-          {dropdown && (
-            <div className="rounded-md w-36 px-5 absolute right-20 top-3">
-              <ul className=" font-mono py-4 ">
-                <Link href={"/myaccount"}>
-                  <li className=" border border-gray-300 rounded p-2 py-3 mb-2 hover:border-gray-900 hover:text-gray-700 nav-link">
-                    Account
-                  </li>
-                </Link>
-                <Link href={"/orders"}>
-                  <li className=" border border-gray-300 rounded p-2 py-3 mb-2 hover:border-gray-900 hover:text-gray-700 nav-link">
-                    Orders
-                  </li>
-                </Link>
-                <li
-                  onClick={logout}
-                  className=" border border-gray-300 rounded p-2 py-3 hover:border-gray-900 hover:text-gray-700 nav-link"
+      <div className=" cursor-pointer items-center cart absolute right-0 top-9 mx-5 flex">
+        {user.value && (
+          <div className="relative inline-block text-left">
+            <button
+              id="dropdownDefaultButton"
+              onClick={toggleDropdown}
+              className="text-black px-2 py-1 text-4xl"
+              type="button"
+            >
+              <VscAccount />
+            </button>
+
+            {/* Dropdown menu */}
+            {isDropdownOpen && (
+              <div
+                id="dropdown"
+                className="z-10 absolute right-0 mt-4 w-44 bg-gradient-to-br from-white to-pink-200 divide-y divide-gray-100 rounded-lg shadow"
+              >
+                <ul
+                  className="py-2 text-sm text-gray-700"
+                  aria-labelledby="dropdownDefaultButton"
                 >
-                  Logout
-                </li>
-              </ul>
-            </div>
-          )}
-          {user.value && (
-            <VscAccount className="text-xl md:text-4xl mx-2"></VscAccount>
-          )}
-        </span>
+                  <Link href={"/myaccount"}>
+                    <li className=" block px-4 py-2 hover:bg-gray-100">
+                      My Account
+                    </li>
+                  </Link>
+                  <Link href={"/orders"}>
+                    <li className=" block px-4 py-2 hover:bg-gray-100">
+                      My Orders
+                    </li>
+                  </Link>
+
+                  <li
+                    onClick={logout}
+                    className=" block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Log Out
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
         {!user.value && (
           <Link href="/login">
             <button className="bg-black hover:bg-indigo-300 hover:text-black text-white mx-2 px-4 py-2 rounded sm:px-2 sm:py-1">
